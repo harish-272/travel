@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Contact page with details and a form">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    <style>
+        /* Custom styles for the contact page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, sans-serif;
+        }
+        .contact-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'images/home_slider.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-container {
+            display: flex;
+            width: 80%;
+            height: 80%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-div, .right-div {
+            padding: 20px;
+        }
+        .left-div {
+            width: 40%;
+            border-right: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .right-div {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .box {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container textarea {
+            width: 100%;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #01c569;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background: #00ff88;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-page">
+    <div class="contact-container">
+        <div class="left-div">
+            <div class="box">
+                <h4>Address</h4>
+                <p>The Hive, Thiruvanmiyur, OMR, Chennai</p>
+            </div>
+            <div class="box">
+                <h4>Phone</h4>
+                <p>6380851155</p>
+            </div>
+            <div class="box">
+                <h4>Email</h4>
+                <p>admin@vtsenterprices.com</p>
+            </div>
+            <div class="box">
+                <h4>Working Hours</h4>
+                <p>9am - 6pm</p>
+            </div>
+        </div>
+
+        <!-- Right Div -->
+        <div class="right-div">
+            <div class="box">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="box form-container">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

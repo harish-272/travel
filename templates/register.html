@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, sans-serif;
+            background-image: url("{% static 'images/home_slider.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #01c569;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .container input[type="submit"]:hover {
+            background: #00ff88;
+        }
+
+        .alert {
+            padding: 10px;
+            background-color: #f44336; /* Red */
+            color: white;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="First Name" required><br>
+            <input type="text" name="last_name" placeholder="Last Name" required><br>
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password1" placeholder="Password" required><br>
+            <input type="password" name="password2" placeholder="Confirm Password" required><br>
+            <input type="submit" value="Register">
+        </form>
+        
+        {% if messages %}
+            <div class="alert">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
